@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: #FAF6EF;
+  --color-foreground: #2C1A0E;
+  --color-card: #FFFFFF;
+  --color-card-foreground: #2C1A0E;
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #2C1A0E;
+  --color-primary: #FF5C3E;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #FF8C42;
+  --color-secondary-foreground: #FFFFFF;
+  --color-muted: #9B8A7A;
+  --color-muted-foreground: #9B8A7A;
+  --color-accent: #FFE566;
+  --color-accent-foreground: #1A1208;
+  --color-destructive: oklch(0.577 0.245 27.325);
+  --color-border: rgba(255, 92, 62, 0.1);
+  --color-input: rgba(255, 92, 62, 0.1);
+  --color-ring: #FF5C3E;
+  --color-chart-1: oklch(0.646 0.222 41.116);
+  --color-chart-2: oklch(0.6 0.118 184.704);
+  --color-chart-3: oklch(0.398 0.07 227.392);
+  --color-chart-4: oklch(0.828 0.189 84.429);
+  --color-chart-5: oklch(0.769 0.188 70.08);
+  --radius: 20px;
+  --color-sidebar: oklch(0.985 0 0);
+  --color-sidebar-foreground: oklch(0.145 0 0);
+  --color-sidebar-primary: oklch(0.205 0 0);
+  --color-sidebar-primary-foreground: oklch(0.985 0 0);
+  --color-sidebar-accent: oklch(0.97 0 0);
+  --color-sidebar-accent-foreground: oklch(0.205 0 0);
+  --color-sidebar-border: oklch(0.922 0 0);
+  --color-sidebar-ring: oklch(0.708 0 0);
+  
+  /* Custom ShopLin colors */
+  --color-coral: #FF5C3E;
+  --color-orange: #FF8C42;
+  --color-warm: #FAF6EF;
+  --color-cream: #FFF8F0;
+  --color-dark: #1A1208;
+  --color-text: #2C1A0E;
+  --color-yellow: #FFE566;
+
+  --font-sans: var(--font-dm-sans);
+  --font-serif: var(--font-fraunces);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+}
+
+/* Custom Animations */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blob {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-28px) scale(1.04);
+  }
+}
+
+@keyframes up {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes thinkingDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.6s ease both;
+}
+
+.animate-page-in {
+  animation: pageIn 0.45s ease both;
+}
+
+.animate-blob {
+  animation: blob 7s ease-in-out infinite;
+}
+
+.animate-blob-reverse {
+  animation: blob 9s ease-in-out infinite reverse;
+}
+
+.animate-blob-fast {
+  animation: blob 4s ease-in-out infinite;
+}
+
+.animate-up {
+  animation: up 0.8s ease both;
+}
+
+.animate-marquee {
+  animation: marquee 22s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-card-in {
+  animation: cardIn 0.45s ease both;
+}
+
+.animate-thinking-dot {
+  animation: thinkingDot 1.2s infinite;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-900 { animation-delay: 0.9s; }
